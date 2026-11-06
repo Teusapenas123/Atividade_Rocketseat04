@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda do Pet Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topo">
+      <div>
+        <h1>Agenda do Pet Shop</h1>
+        <p>Veja os atendimentos do dia e agende novos horários.</p>
+      </div>
+      <div class="controles">
+        <div class="field">
+          <label for="data-agenda">Data da agenda</label>
+          <input id="data-agenda" type="date">
+        </div>
+        <button id="btn-novo" class="btn" type="button">Novo agendamento</button>
+      </div>
+    </header>
+
+    <main id="agenda" class="agenda"></main>
+  </div>
+
+  <dialog id="modal" aria-labelledby="titulo-modal">
+    <form id="form-agendamento" novalidate>
+      <h2 id="titulo-modal">Agende um atendimento</h2>
+
+      <div class="field">
+        <label for="tutor">Nome do tutor</label>
+        <input id="tutor" name="tutor" type="text" autocomplete="off" aria-describedby="erro-tutor">
+        <span id="erro-tutor" class="erro"></span>
+      </div>
+      <div class="field">
+        <label for="pet">Nome do pet</label>
+        <input id="pet" name="pet" type="text" autocomplete="off" aria-describedby="erro-pet">
+        <span id="erro-pet" class="erro"></span>
+      </div>
+      <div class="field">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" name="telefone" type="tel" placeholder="(61) 99999-9999" aria-describedby="erro-telefone">
+        <span id="erro-telefone" class="erro"></span>
+      </div>
+      <div class="field">
+        <label for="servico">Descrição do serviço</label>
+        <input id="servico" name="servico" type="text" placeholder="Ex.: Banho e tosa" autocomplete="off" aria-describedby="erro-servico">
+        <span id="erro-servico" class="erro"></span>
+      </div>
+      <div class="duo">
+        <div class="field">
+          <label for="data">Data</label>
+          <input id="data" name="data" type="date" aria-describedby="erro-data">
+          <span id="erro-data" class="erro"></span>
+        </div>
+        <div class="field">
+          <label for="hora">Hora</label>
+          <input id="hora" name="hora" type="time" aria-describedby="erro-hora">
+          <span id="erro-hora" class="erro"></span>
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button id="btn-cancelar" class="btn secundario" type="button">Cancelar</button>
+        <button class="btn" type="submit">Agendar</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
